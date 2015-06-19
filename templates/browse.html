@@ -1,0 +1,136 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DataBase</title>
+		<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lobex Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen" >
+		<script src="js/jquery.min.js"></script>
+        <link href="{{url_for('static', filename='css/bootstrap-responsive.css')}}" rel="stylesheet">
+            
+            
+	</head>
+    
+	<body>
+		<!-- banner -->
+		<div class="banner-bottom" >
+
+			<div class="container">
+				<div class="logo1">
+					<a href="{{url_for('index')}}"><img src="{{url_for('static', filename='images/logo1.png')}}" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="head-nav">
+					<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="{{url_for('index')}}" data-hover="首頁">首頁</a></li>
+						<li class="active"><a href="{{url_for('browse')}}">瀏覽</a></li>
+                        <li><a href="{{url_for('team')}}" data-hover="團隊">團隊</a></li>
+                        <div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+				<!-- script-for-nav -->
+				<script>
+					$( "span.menu" ).click(function() {
+					$( ".head-nav ul" ).slideToggle(300, function() {
+						// Animation complete.
+					});
+					});
+				</script>
+				<!-- script-for-nav -->
+			</div>
+		</div>
+		<!-- banner -->
+        <br>
+        
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <form action="#" method="post">
+                    <div class="well sidebar-nav">
+                        <div class="input-group">
+                            <input type="text" id="classname" name="classname" class="input-block-level"  placeholder="輸入課程名稱" >
+                        </div>
+                        <select class="form-control" id="CourseSort" name="CourseSort" required/>
+                        <option value="common">通識中心</option>
+                        <option value="language">語教中心</option>
+                        </select>
+                        <div class="col-xs-4 col-xs-offset-4 ">
+                            <button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 查詢</button>
+                        </div>
+                        <br>
+                        <!-- 課程內容 -->
+                        <ul class="nav nav-list">
+                            {% for course in courses %}
+                            <li><a href="{{url_for('forum',name=course['course'])}}">{{ course['course']}} &nbsp;-&nbsp; {{ course['teacher']}}</a></li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div><!--/.well -->
+                    </form>
+                </div><!--/span-->
+                <div class="span9">
+                    <div class="hero-unit">
+                        <h1>綜合討論區</h1>
+                        <p>這裏是綜合討論區，歡迎大家來討論</p>
+                        <p><a href="{{url_for('comment')}}" class="btn btn-primary btn-large">撰寫評論 &raquo;</a></p>
+                    </div>
+                            {% for comment in comments %}
+                                <font color="#444444">
+                             {{comment['time']}}</font>
+                             <ul><a href="{{url_for('editcomment',id=comment['_id'])}}">編輯</a>
+                                <a href="{{url_for('delete',id=comment['_id'])}}">刪除</a></ul>
+                             {% if comment['title'] %}
+                             <font color="#0044BB">{{comment['coursename']}} - {{comment['teacher']}}</font>
+                             {% else %}
+                             <p>綜合討論</p>
+                             {% endif %}
+                             
+                             <div class="row-fluid">
+                                {% if comment['title'] %}
+                                    <h3>Title:{{comment['title']}}</h3>
+                                {% else %}
+                                    <h3>無標題</h3>
+                                {% endif %}
+                            </div>
+                             {% if comment['message'] %}
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;{{comment['message']}}</p><br>
+                             {% else %}
+                             <p><font color="#888888">&nbsp;&nbsp;&nbsp;&nbsp;無內文</font></p><br>
+                             {% endif %}
+                            
+                            {% endfor %}
+
+            </div><!--/row-->
+     
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    
+
+
+    </body>
+</html>

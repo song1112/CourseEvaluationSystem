@@ -1,3 +1,7 @@
 .*
 !.gitignore
 *course*.*
+mongodb.py*
+templates/team.html
+/venv
+*.pyc

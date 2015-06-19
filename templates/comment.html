@@ -1,0 +1,114 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DataBase</title>
+		<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lobex Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen" />
+		<script src="js/jquery.min.js"></script>
+        <link href="{{url_for('static', filename='css/bootstrap-responsive.css')}}" rel="stylesheet">
+	</head>
+	<body>
+        
+		<!-- banner -->
+		<div class="banner-bottom" >
+
+			<div class="container">
+				<div class="logo1">
+					<a href="{{url_for('index')}}"><img src="{{url_for('static', filename='images/logo1.png')}}" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="head-nav">
+					<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="{{url_for('index')}}" data-hover="首頁">首頁</a></li>
+						<li><a href="{{url_for('browse')}}" data-hover="瀏覽">瀏覽</a></li>
+                        <li><a href="{{url_for('team')}}" data-hover="團隊">團隊</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+				<!-- script-for-nav -->
+				<script>
+					$( "span.menu" ).click(function() {
+					$( ".head-nav ul" ).slideToggle(300, function() {
+						// Animation complete.
+					});
+					});
+				</script>
+				<!-- script-for-nav -->
+			</div>
+		</div>
+        
+        <br>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <form action="#" method="post">
+                        <div class="well sidebar-nav">
+                            <div class="input-group">
+                                <input type="text" id="classname" name="classname" class="input-block-level"  placeholder="輸入課程名稱">
+                                    </div>
+                            <select class="form-control" id="CourseSort" name="CourseSort" />
+                            <option value="common">通識中心</option>
+                            <option value="language">語教中心</option>
+                            </select>
+                            <div class="col-xs-4 col-xs-offset-4 ">
+                                <button type="submit" name="submit" value="query" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 查詢</button>
+                            </div>
+                            <br>
+                            <!-- 課程內容 -->
+                            <ul class="nav nav-list">
+                                {% for course in courses %}
+                                <li><a href="{{url_for('review',id=course['_id'])}}">{{ course['course']}} &nbsp;-&nbsp; {{ course['teacher']}}</a></li>
+                                {% endfor %}
+                                
+                            </ul>
+                        </div><!--/.well -->
+                    </form>
+                </div><!--/span-->
+                
+            <div class="span9">
+                <div class="hero-unit">
+                    {% if coursename %}
+                    <h1>{{coursename}}</h1>
+                    <p>老師：{{teacher}}</p>
+                    {% else %}
+                    <h1>課程名稱</h1><br>
+                    <p>請選擇要評論的課程名稱及對應教師</p>
+                    {% endif %}
+                </div>
+				<div class="contact-details">
+					<form action="#" method="post">
+                        
+						<div class="row">
+							</div>
+							<div class="col-md-12">
+                                
+                                <input type="text" id="title" name="title" placeholder="標題" />
+								<textarea  id="message" name="message" placeholder="評論內容"></textarea>
+                                <button type="submit" name="submit" value="sent" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-off"></span>送出</button>
+							</div>
+						</div>
+                
+					</form>
+				
+			</div>
+            </div>
+	<!-- contact -->
+	<!-- cullam -->
+	
+	<!-- cullam -->
+	
+    </body>
+</html>

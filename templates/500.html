@@ -8,15 +8,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Lobex a Corporate Category Flat Bootstarp Responsive Website Template | About :: w3layouts</title>
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="{{url_for('static', filename='css/bootstrap2.css')}}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Lobex Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen" />
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
@@ -24,16 +23,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="banner-bottom">
 			<div class="container">
 				<div class="logo1">
-					<a href="index.html"><img src="images/logo1.png" class="img-responsive" alt="" /></a>
+					<a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='images/logo1.png') }}" class="img-responsive" alt="" /></a>
 				</div>
 				<div class="head-nav">
 					<span class="menu"> </span>
-					<ul class="cl-effect-15">
-						<li><a href="index.html" data-hover="首頁">首頁</a></li>
-						<li class="active"><a href="about.html">瀏覽</a></li>
-						<li><a href="contact.html" data-hover="評論">評論</a></li>
-						<div class="clearfix"> </div>
-					</ul>
+                    <ul class="cl-effect-15">
+                        <li><a href="{{url_for('index')}}" data-hover="首頁">首頁</a></li>
+                        <li><a href="{{url_for('browse')}}" data-hover="瀏覽">瀏覽</a></li>
+                        <li><a href="{{url_for('team')}}" data-hover="團隊">團隊</a></li>
+                        <li><a href="{{url_for('login')}}" data-hover="登入">登入</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
 				</div>
 				<div class="clearfix"> </div>
 				<!-- script-for-nav -->
@@ -48,25 +48,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 		<!-- banner -->
-		<form action="">
-			<select name="YourLocation" required/>
-				<option value="Taipei">通識中心</option>
-				<option value="Taoyuan">語教中心</option>
-			</select>
-			
-			<!-- 這裡用迴圈跑課程名字 -->
-			<select name="YourLocation" required/>
-				<option value="Taipei">科技史</option>
-				<option value="Taoyuan">創意思考</option>
-			</select><p><p>
-		</form>
-		
-		<!-- footer -->
-		<div class="footer">
-			<div class="container">
-				<p>Copyrights © 2015 Lobex All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<div class="container">
+			<div class="contact-content">
+			  <div class="container">
+			    <div class="error-404 text-center">
+			      <h1>500</h1>
+			      <p>this link dead link</p>
+			      <a class="b-home" href="index.html">Back to Home</a> </div>
+		      </div>
 			</div>
 		</div>
+		
+		<!-- footer -->
+	
 		<!-- footer -->
 	</html>
 </body>

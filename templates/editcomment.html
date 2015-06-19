@@ -1,0 +1,79 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DataBase</title>
+		<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lobex Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen" />
+		<script src="js/jquery.min.js"></script>
+        <link href="{{url_for('static', filename='css/bootstrap-responsive.css')}}" rel="stylesheet">
+	</head>
+	<body>
+        
+		<!-- banner -->
+		<div class="banner-bottom" >
+
+			<div class="container">
+				<div class="logo1">
+					<a href="{{url_for('index')}}"><img src="{{url_for('static', filename='images/logo1.png')}}" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="head-nav">
+					<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="{{url_for('index')}}" data-hover="首頁">首頁</a></li>
+						<li><a href="{{url_for('browse')}}" data-hover="瀏覽">瀏覽</a></li>
+                        <li><a href="{{url_for('team')}}" data-hover="團隊">團隊</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+				<!-- script-for-nav -->
+				<script>
+					$( "span.menu" ).click(function() {
+					$( ".head-nav ul" ).slideToggle(300, function() {
+						// Animation complete.
+					});
+					});
+				</script>
+				<!-- script-for-nav -->
+			</div>
+		</div>
+        
+        <br>
+        <div class="container-fluid">
+            <div class="row-fluid">
+				<div class="contact-details">
+					<form action="#" method="post">
+                        
+						<div class="row">
+							</div>
+							<div class="col-md-12">
+                                
+                                <input type="text" id="title" name="title" placeholder="標題" value={{title}} >
+                                    <textarea  id="message" name="message" placeholder="評論內容" >{{message}}</textarea>
+                                <button type="submit" name="submit" value="sent" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-off"></span>送出</button>
+							</div>
+						</div>
+                
+					</form>
+				
+			</div>
+            </div>
+	<!-- contact -->
+	<!-- cullam -->
+	
+	<!-- cullam -->
+	
+    </body>
+</html>
